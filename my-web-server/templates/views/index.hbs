@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Index Page</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/app.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById('searchWeatherForm');
+            form.addEventListener('submit', (event) => {
+
+                event.preventDefault();
+
+                let loc = document.getElementById('searchLocation').value;
+                getWeather(loc, (data) => {
+                    if (data) {
+                        var temp = data?.temperature;
+                        var icon = data?.weather_icons[0];
+                    }
+                   document.getElementById('weatherTemperature').innerHTML = `Temperatur: ${temp} degrees`;
+                   document.getElementById('weatherIcon').innerHTML = `<img src="${icon}">`;
+                })
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    {{>header}}
+    <main>
+        <form id="searchWeatherForm">
+            <label for="searchLocation">Location: </label>
+            <input id="searchLocation">
+            <button type="submit">Search</button>
+        </form>
+    </main>
+    <section>
+        <div id="weatherTemperature"></div>
+        <div id="weatherIcon"></div>
+    </section>
+    {{>footer}}
+</body>
+
+</html>
