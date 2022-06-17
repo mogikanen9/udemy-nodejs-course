@@ -20,7 +20,7 @@
                         var temp = data?.temperature;
                         var icon = data?.weather_icons[0];
                     }
-                   document.getElementById('weatherTemperature').innerHTML = `Temperatur: ${temp} degrees`;
+                   document.getElementById('weatherTemperature').innerHTML = `Temperature: ${temp} degrees`;
                    document.getElementById('weatherIcon').innerHTML = `<img src="${icon}">`;
                 })
             })
@@ -37,11 +37,11 @@
             <input id="searchLocation">
             <button type="submit">Search</button>
         </form>
-    </main>
-    <section>
+        <section>
         <div id="weatherTemperature"></div>
         <div id="weatherIcon"></div>
     </section>
+    </main>
     {{>footer}}
 </body>
 
