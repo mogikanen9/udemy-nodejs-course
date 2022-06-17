@@ -15,6 +15,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 3000
+# EXPOSE 3000 - not working in heroku :(
 
-CMD [ "node", "src/app.js" ]
+# CMD [ "node", "src/app.js" ]
+CMD node src/app.js
