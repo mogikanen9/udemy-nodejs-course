@@ -19,8 +19,13 @@
                     if (data) {
                         var temp = data?.temperature;
                         var icon = data?.weather_icons[0];
+                        var feels = data?.feelslike;
+                        var hum = data?.humidity;
                     }
                    document.getElementById('weatherTemperature').innerHTML = `Temperature: ${temp} degrees`;
+                   document.getElementById('weatherFeelsLike').innerHTML = `Feels like: ${feels} degrees`;
+                   document.getElementById('weatherHumidity').innerHTML = `Humidity: ${hum}`;
+                  
                    document.getElementById('weatherIcon').innerHTML = `<img src="${icon}">`;
                 })
             })
@@ -38,7 +43,10 @@
             <button type="submit">Search</button>
         </form>
         <section>
+        <hr>    
         <div id="weatherTemperature"></div>
+        <div id="weatherFeelsLike"></div>
+        <div id="weatherHumidity"></div>
         <div id="weatherIcon"></div>
     </section>
     </main>
