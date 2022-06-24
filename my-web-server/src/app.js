@@ -26,7 +26,8 @@ app.get('/about', (req, resp) => {
     resp.render('about', {
         title: 'About Page',
         createdBy: 'John Doe Moe',
-        author: 'John Doe'
+        author: 'John Doe',
+        dataSource: 'weatherstack.com'
     });
 });
 
